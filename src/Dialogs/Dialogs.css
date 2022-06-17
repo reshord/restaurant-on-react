@@ -1,0 +1,12 @@
+.dialogs li {
+    color: white;
+}
+
+.dialogs {
+    font-size: 20px;
+    margin-right: 100px;
+}
+
+.dialogs ul, li {
+    list-style: none;
+}

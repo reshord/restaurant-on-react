@@ -1,0 +1,16 @@
+.contacts {
+    width: 100%;
+}
+
+.contacts-list-block {
+    margin: 0 auto;
+    width: 500px;
+    text-align: center;
+}
+
+.contacts-list-block li {
+    color: white;
+    font-size: 20px;
+    list-style: none;
+    margin-bottom: 10px;
+}

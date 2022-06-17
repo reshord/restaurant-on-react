@@ -1,0 +1,49 @@
+.wrapper-block {
+    background-color: #1E1A1A;
+    width: 100%;
+    max-width: 1600px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.wrapper-block__sidebar {
+    width: 13%;
+    color: white;
+}
+
+.wrapper-block__sidebar_element div {
+    margin-bottom: 7px;
+}
+
+.wrapper-block__content {
+    
+    width: 86%;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.card-block {
+    margin: 10px 50px 5px 0px;
+}
+
+.wrapper-block__sidebar-menu li {
+    color: white;
+    list-style: none;
+    text-align: center;
+    margin: 10px 0px 15px 0px;
+}
+
+.wrapper-block__sidebar-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper-block__sidebar__block1 {
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
