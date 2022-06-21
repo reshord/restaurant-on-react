@@ -20,37 +20,37 @@ const initialState = {
             <Card title="Big Mac" img="https://i.ibb.co/mSZyxd7/big-mac.jpg" weight="300" price="350"/>,
             <Card title="Run Tasty" img="https://i.ibb.co/7VtPjg8/run-tasty.jpg" weight="265" price="345"/>
             ],
-        contacts: {
-            country: 'Ukraine', 
-            city: 'Kiyv', 
-            number: '+38023423498'
-        },
-        
     },
 }
 
  const postReducer = (state = initialState, action) => {
 
     switch(action.type) {
-        case 'ADD-POST': 
-            const post = {
+        case 'ADD-POST': {
+            const newPost = {
                 id: 6,
                 message: state.MyPost.newPostText,
                 likes: 0
             }
-            state.MyPost.posts.push(post)
+            let stateCopy = {...state}
+            stateCopy.MyPost.posts = [...state.MyPost.posts]
+            stateCopy.MyPost.posts.push(newPost)
 
 
-        return state
+        return stateCopy
+    }
 
-        case 'UPDATE-NEW-POST-TEXT': 
-            state.MyPost.newPostText = action.text
-        return state
+        case 'UPDATE-NEW-POST-TEXT': {
+        let stateCopy = {...state}
+        stateCopy.MyPost.newPostText = action.text
+
+        return stateCopy
+         }
         default: 
             return state
+   
     }
 }
-
 export const addPostActionCreator = () => ({type: ADD_POST})
 
 export const updateNewPostTextActionCreator = (text) => 

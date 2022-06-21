@@ -6,16 +6,18 @@ import MyPost from '../MyPost/MyPost';
 
 
 const MyPosts = (props) => {
+    const myPost = props.MyPost.MyPost
     const checkValue = React.createRef()
+
     const addPost = () => {
         const text = checkValue.current.value
         props.addPost(text)
-        checkValue.current.value = ''
+
     }
 
     const postChange = () => {
         const text = checkValue.current.value
-        props.updateNewPostTextActionCreator(text)
+        props.postChange(text)
 
     }
     return (
@@ -24,7 +26,7 @@ const MyPosts = (props) => {
             <div>
                 <div>
                     <input onChange={postChange} 
-                           value={props.newPostText} 
+                           value={myPost.newPostText} 
                            ref={checkValue} 
                            type="text" />
                 </div>
@@ -33,7 +35,7 @@ const MyPosts = (props) => {
                 </div>
             </div>
             <div className='post'>
-                {props.post.map(el => <MyPost el={el}/>)}
+                {myPost.posts.map(el => <MyPost el={el}/>)}
             </div>
         </div>
     )

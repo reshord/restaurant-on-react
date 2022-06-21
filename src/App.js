@@ -7,13 +7,15 @@ import './Contacts/Contacts.css'
 import './App.css'
 import './Post/Post.css'
 import './Dialogs/Dialogs.css'
+import './Users/Users.css'
 import Header from './Header/Header';
 import Sidebar from './Sidebar/Sidebar';
 import Content from './Content/Content';
-import Contacts from './Contacts/Contacts';
+import ContactsContainer from './Contacts/ContactsContainer';
 import Reviews from './Reviews/Reviews';
 import MyPostsContainer from './Post/PostСontainer';
 import DialogsContainer from './Dialogs/DialogsContainter';
+import UsersContainer from './Users/UsersContainer';
 
 import { Route, Routes } from 'react-router-dom';
 import React from 'react'
@@ -21,11 +23,11 @@ import React from 'react'
 
 
 const App = (props) => {
-  const newPostText = props.state.MyPost.MyPost.newPostText
-  const newMessageBody = props.state.dialogPage.dialogPage.NewMessageBody
-  const card = props.state.MyPost.MyPost.card.map(el => el.props)
-  const contacts = props.state.MyPost.MyPost.contacts
-  const message = props.state.dialogPage.dialogPage.messages.map(el => el)
+  // const state = props.store.getState()
+  // const newMessageBody = state.dialogPage.dialogPage.NewMessageBody
+  // const card = state.MyPost.MyPost.card.map(el => el.props)
+  // const contacts = state.MyPost.MyPost.contacts
+  // const message = state.dialogPage.dialogPage.messages.map(el => el)
 
   return (
     <div className="App">
@@ -34,13 +36,12 @@ const App = (props) => {
         <div className="wrapper-block">
           <Sidebar />
           <Routes>
-              <Route exact path="/" element={ <Content card={card} /> } />
-              <Route path="/post" element={ <MyPostsContainer store={props.store} />} />
+              <Route exact path="/" element={ <Content /> } />
+              <Route path="/post" element={ <MyPostsContainer />} />
               <Route path="/reviews" element={ <Reviews /> }/>
-              <Route path="/contacts" element={ <Contacts contacts={contacts} /> }/>
-              <Route path="/dialogs" element={ <DialogsContainer store={props.store}
-                                                                 newMessageBody={newMessageBody}
-                                                                 message={message}/> }/>
+              <Route path="/contacts" element={ <ContactsContainer /> }/>
+              <Route path="/dialogs" element={ <DialogsContainer /> }/>
+              {/* <Route path="/users" element={ <UsersContainer /> }/> */}
           </Routes>
             
           
@@ -52,5 +53,3 @@ const App = (props) => {
 }  
 
 export default App;
-
-

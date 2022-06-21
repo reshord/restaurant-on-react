@@ -15,6 +15,7 @@ const Header = (props) => {
                 <Link className="header-nav__navigation" to="/reviews">Reviews</Link>
                 <Link className="header-nav__navigation" to="/contacts">Contacts</Link>
                 <Link className="header-nav__navigation" to="/dialogs">Dialogs</Link>
+                <Link className="header-nav__navigation" to="/users">Users</Link>
             </div>
             
             <div className="header-favourites">

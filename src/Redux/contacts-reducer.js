@@ -1,5 +1,3 @@
-const ADD_POST = 'ADD-POST'
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT' 
 
 const initialState = {
     contacts: {
@@ -8,3 +6,9 @@ const initialState = {
         number: '+38023423498'
     },
 }
+
+const ContactsReducer = (state = initialState, action) => {
+    return state
+}
+
+export default ContactsReducer;
